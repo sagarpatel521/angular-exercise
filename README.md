@@ -1,92 +1,66 @@
-# angular-steelcoin-chart-assessment
+# Steelcoin Coding Challenge
+Hint: Parts of this story are fictional. All similarities with actually companies is a coincidence 😉
 
-
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
 
 ## Getting started
 
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+- [Setup SSH](https://docs.gitlab.com/ee/user/ssh.html) to push and pull.
+- [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push to this Git repository with your favorite IDE
+- [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://gitlab.com/wift_digital/steelcoin/coding-assessment/angular-steelcoin-chart-assessment.git
-git branch -M main
-git push -uf origin main
-```
-
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://gitlab.com/wift_digital/steelcoin/coding-assessment/angular-steelcoin-chart-assessment/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
+- `npm install`
+- `ng serve`
 
 ## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+This project is used for preparing applicants for coding interviews.
+This project holds a spring boot project based on Java and an Angular project which should use Material Design and display data in a chart.
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+## Story
+Frankstahl is a traditional and successful steel trading company.
+Our customers can order steel products on [thesteel.com](https://thesteel.com)
+With millions of turnover, this shop requires high availability, various K8s microservices and multiple deployment regions.
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+You, as our latest joiner, are challenged with an important task:
+Our pricing team is currently discussing things with a million-dollar investor. And... they need your urgent help!
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+Frankstahl recently founded a spin-off named Steelcoin. This spin-off buys and sells specially forged steel sheets from Frankstahl.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+Customers of Steelcoin can invest into the relaibility of steel. Under the hood Steelcoin, buys and sells steel plates and stores them in secret, highly secure warehouses.
+You can learn more about Steelcoin at [steelcoin.com](https://steelcoin.com/).
+The investor wants to see how the Price of Steelcoin moved and developed over the last months.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+## Your Task
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+The pricing team needs data of the latest buy-prices of Steelcoin. We already have an API to load historic prices. But the pricing team needs a good looking chart.
+```curl
+curl 'https://pricing.steelcoin.com/data/steelcoin/legacy/volume-weighted-average' \
+-X POST -H 'Accept: */*' -H 'Content-Type: application/json' --data-raw '{"from":"2023-02-25T09:00:32.437Z","to":"2023-03-27T09:00:32.437Z","resolution":"DAYS"}'
+```
+The query - as already provided by the example above - accepts `from` and `to` ISO-8601 date-times and a resolution parameter ("DAYS" or "MONTHS").
+The returned data contains an array of (date, buyPrice) which you can use to create a diagram. The API does also return sell-prices which should be ignored please.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+- Integrate Angular Material into this project. There are already some buttons in the code-base. Please replace them with their Angular-Material equivalents.
+- Familiarize yourself with the given code-base. There is already an empty diagram component and empty interval-selector-component.
+- Familiarize yourself with the routing file and create an auth-guard for the /chart route. You should only see the page if you are logged in (login.service.ts)
+- Give the interval-selector buttons functionality: When clicking the button we would like to reload the desired data and display the data in the chart.
+- Plus: Make the chart 'usable'. We trust you in showing that you build good UX and solid UIs. 
+Consider selecting well-worded labels, consider pretty formatting / responsive css... Consider adding a skeleton loader while the data is loading / initializing.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+## Hints
+We left some HINTS in this code base. You can find them by searching for HINT/Hint.
 
 ## License
-For open source projects, say how it is licensed.
+This project should only be used by Frankstahl applicants. Don't share!
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+## Too much?
+If you run out of energy or time let us know.
+
+We do not expect a perfect, run-able solution.
+We want to see how you approach and solve certain problems and have a baseline for our "code-review". There we will speak about various technical topics and assess your skills.
+
+At Frankstahl we often develop feature branches and practise regular pair-programming sessions as well as code-reviews for MergeRequests.
+Your coding assessment aims to give you an impression for our task definitions.
+
+It is similar to our day-to-day work. Based on rough requirements you start implementing and prototyping. Then we discuss the next steps and adapt in an agile manner 🚀

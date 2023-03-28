@@ -1,0 +1,14 @@
+<h3>Welcome to the chart screen</h3>
+<ng-container *ngIf="!loginService.isLoggedIn">
+    <div><span class="red">Error: </span> Not logged in!</div><br /><br />
+</ng-container>
+<div>
+    <steelcoin-interval-selector></steelcoin-interval-selector>
+    <steelcoin-buy-price-chart></steelcoin-buy-price-chart>
+</div>
+
+
+
+
+<br /><br /><br /><br />
+<p>Hint: Do you need inspiration? Look for the Steelcoin Price Diagram at https://steelcoin.com/en-AT/</p>
