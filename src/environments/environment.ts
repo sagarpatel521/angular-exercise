@@ -2,8 +2,11 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+export const apiHost = 'https://pricing.steelcoin.com';
+
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: apiHost,
 };
 
 /*

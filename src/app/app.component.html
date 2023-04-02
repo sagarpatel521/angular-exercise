@@ -1,1 +1,16 @@
-<router-outlet></router-outlet>
+<div class="main-container">
+    <div class="child-container">
+
+        <mat-toolbar>
+            <mat-toolbar-row>
+                <h2 class="header-title">STEELCOIN</h2>
+                <span class="header-spacer"></span>
+                <button mat-stroked-button (click)="loginOrLogout(isLoggedIn)">
+                    {{isLoggedIn ? 'Log Out' :  'Log In'}}
+                </button>
+            </mat-toolbar-row>
+        </mat-toolbar>
+
+        <router-outlet></router-outlet>
+    </div>
+</div>

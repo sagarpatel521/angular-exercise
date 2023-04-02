@@ -1,0 +1,33 @@
+.interval-selector {
+    display: flex;
+    height: 40px;
+    border-radius: 26px;
+    background-color: var(--sc-mild-black);
+
+    &__tile {
+        display: inline-block;
+        width: 70px;
+        height: calc(100% - 6px);
+        color: var(--sc-light-grey);
+        background-color: var(--sc-mild-black);
+        padding: 0 16px;
+        margin: 3px 4px;
+        border-radius: inherit;
+        border: none;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: ease-in-out;
+    }
+}
+
+@media (max-width: 600px) {
+    .interval-selector {
+
+        &__tile {
+            font-size: 12px;
+            width: 60px;
+        }
+    }
+}

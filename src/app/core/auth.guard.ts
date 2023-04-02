@@ -1,1 +1,0 @@
-// HINT: you should build an auth-guard for the chart-screen (using the login service)

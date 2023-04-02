@@ -8,6 +8,12 @@ import { BuyPriceChartComponent } from './buy-price-chart/buy-price-chart.compon
 import { LoginScreenComponent } from './login-screen/login-screen.component';
 import { ChartScreenComponent } from './chart-screen/chart-screen.component';
 import {NgChartsModule} from "ng2-charts";
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthGuardService } from './core/guard/auth.guard';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -15,14 +21,19 @@ import {NgChartsModule} from "ng2-charts";
     IntervalSelectorComponent,
     BuyPriceChartComponent,
     LoginScreenComponent,
-    ChartScreenComponent
+    ChartScreenComponent,
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
-    NgChartsModule
+    HttpClientModule,
+    NgChartsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
   ],
-  providers: [],
+  providers: [AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

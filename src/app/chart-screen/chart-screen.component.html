@@ -1,15 +1,34 @@
-<h3>Welcome to the chart screen</h3>
-<ng-container *ngIf="!loginService.isLoggedIn">
-    <div><span class="red">Error: </span> Not logged in!</div><br /><br />
-</ng-container>
-<div>
-    <steelcoin-interval-selector></steelcoin-interval-selector>
-    <steelcoin-buy-price-chart></steelcoin-buy-price-chart>
+<div class="chart-container">
+    <div class="chart-wrapper">
+        <div class="chart-wrapper__child">
 
+            <div class="interval-wrapper width-100">
+                <div class="latest-price">
+                    <h6 class="latest-price__title">Steelcoin price</h6>
+                    <ng-container *ngIf="latestCoinPrice$ | async as latestCoinPrice else loadingLatestPrice">
+                        <h4 class="latest-price__value">
+                            &#8364; {{latestCoinPrice}}
+                        </h4>
+                    </ng-container>
+                    <ng-template #loadingLatestPrice>
+                        <div class="latest-price__loader skeleton-box"></div>
+                    </ng-template>
+                </div>
+
+                <steelcoin-interval-selector [intervalOptions]="segmentOptions" [selectedInterval]="segmentOptions[1]"
+                    (intervalChange)="changeDateRangeMode($event)">
+                </steelcoin-interval-selector>
+            </div>
+
+            <ng-container *ngIf="steelCoinPriceDetails$ | async as data else loadingChart">
+                <div class="price-chart">
+                    <steelcoin-buy-price-chart [data]="getLineChartData(data)"></steelcoin-buy-price-chart>
+                </div>
+            </ng-container>
+            <ng-template #loadingChart>
+                <div class="chart-loader skeleton-box"></div>
+            </ng-template>
+
+        </div>
+    </div>
 </div>
-
-
-
-
-<br /><br /><br /><br />
-<p>Hint: Do you need inspiration? Look for the Steelcoin Price Diagram at https://steelcoin.com/en-AT/</p>
