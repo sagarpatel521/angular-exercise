@@ -42,6 +42,7 @@ export class IntervalSelectorComponent implements OnInit {
     const selectedLabel = this.selectedIntervalValue.label;
     return label === selectedLabel;
   }
+  
 
   public getDatesByRangeMode(interval: IntervalOption): DateRangeState{
     const {label: rangeLabel, value: rangeMode} = interval;
